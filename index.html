@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Control de Foco</title>
+</head>
+<body>
+    <h1>Control de Foco</h1>
+    <button onclick="controlFoco('on')">Encender</button>
+    <button onclick="controlFoco('off')">Apagar</button>
+    <script>
+        function controlFoco(action) {
+            fetch(`http://http://192.168.1.36//${action}`)
+                .then(response => response.text())
+                .then(data => alert(data))
+                .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>
